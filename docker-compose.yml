@@ -8,7 +8,7 @@ services:
     #   dockerfile: Dockerfile
     container_name: debmirror-amd64
     volumes:
-      - ./
+      - ./mirrorbuild-amd64.sh:/opt/mirrorbuild-amd64.sh
       - /volume1/mirror:/opt/mirror
     restart: 'no'
     entrypoint: [ "bash", "-c", "chmod +x mirrorbuild-amd64.sh && ./mirrorbuild-amd64.sh"]
@@ -19,7 +19,6 @@ services:
     #   dockerfile: Dockerfile
     container_name: debmirror-ports
     volumes:
-      - ./mirrorbuild-amd64.sh:/opt/mirrorbuild-amd64.sh
       - ./mirrorbuild-ports.sh:/opt/mirrorbuild-ports.sh
       - /volume1/mirror:/opt/mirror
     restart: 'no'
