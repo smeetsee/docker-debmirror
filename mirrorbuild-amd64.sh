@@ -52,7 +52,7 @@ outPath=/opt/mirror/ubuntu
 
 ## ADDED BY Xander Smeets, used to copy GPG keys from Docker image
 mkdir -p $GNUPGHOME
-rm $GNUPGHOME/trustedkeys.gpg
+rm -f $GNUPGHOME/trustedkeys.gpg
 gpg --no-default-keyring --keyring $GNUPGHOME/trustedkeys.gpg --import /usr/share/keyrings/ubuntu-archive-keyring.gpg
 chown -R root:root $GNUPGHOME
 chmod -R 555 $GNUPGHOME
