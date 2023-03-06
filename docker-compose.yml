@@ -11,7 +11,7 @@ services:
       - ./mirrorbuild-amd64.sh:/opt/mirrorbuild-amd64.sh
       - /volume1/mirror:/opt/mirror
     restart: 'no'
-    entrypoint: [ "bash", "-c", "chmod +x mirrorbuild-amd64.sh && ./mirrorbuild-amd64.sh"]
+    entrypoint: [ "bash", "-c", "chmod +x /opt/mirrorbuild-amd64.sh && /opt/mirrorbuild-amd64.sh"]
   debmirror-ports:
     image: ghcr.io/smeetsee/docker-debmirror:main
     # build:
@@ -22,4 +22,4 @@ services:
       - ./mirrorbuild-ports.sh:/opt/mirrorbuild-ports.sh
       - /volume1/mirror:/opt/mirror
     restart: 'no'
-    entrypoint: [ "bash", "-c", "chmod +x mirrorbuild-ports.sh && ./mirrorbuild-ports.sh"]
+    entrypoint: [ "bash", "-c", "chmod +x /opt/mirrorbuild-ports.sh && /opt/mirrorbuild-ports.sh"]
