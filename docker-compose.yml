@@ -19,7 +19,8 @@ services:
     #   dockerfile: Dockerfile
     container_name: debmirror-ports
     volumes:
-      - ./
+      - ./mirrorbuild-amd64.sh:/opt/mirrorbuild-amd64.sh
+      - ./mirrorbuild-ports.sh:/opt/mirrorbuild-ports.sh
       - /volume1/mirror:/opt/mirror
     restart: no
     entrypoint: [ "bash", "-c", "./mirrorbuild-ports.sh"]
