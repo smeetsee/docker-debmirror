@@ -10,7 +10,7 @@ services:
     volumes:
       - ./
       - /volume1/mirror:/opt/mirror
-    restart: no
+    restart: 'no'
     entrypoint: [ "bash", "-c", "./mirrorbuild-amd64.sh"]
   debmirror-ports:
     image: ghcr.io/smeetsee/docker-debmirror:main
@@ -22,5 +22,5 @@ services:
       - ./mirrorbuild-amd64.sh:/opt/mirrorbuild-amd64.sh
       - ./mirrorbuild-ports.sh:/opt/mirrorbuild-ports.sh
       - /volume1/mirror:/opt/mirror
-    restart: no
+    restart: 'no'
     entrypoint: [ "bash", "-c", "./mirrorbuild-ports.sh"]
