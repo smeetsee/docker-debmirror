@@ -72,6 +72,7 @@ debmirror       -a $arch \
                 -r $inPath \
                 --progress \
                 --method=$proto \
+                --exclude-deb-section=games \
                 $outPath
 
 
