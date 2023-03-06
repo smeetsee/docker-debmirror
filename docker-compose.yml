@@ -1,0 +1,25 @@
+version: '3.6'
+
+services:
+  debmirror-amd64:
+    image: ghcr.io/smeetsee/docker-debmirror:main
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    container_name: debmirror-amd64
+    volumes:
+      - ./
+      - /volume1/mirror:/opt/mirror
+    restart: no
+    entrypoint: [ "bash", "-c", "./mirrorbuild-amd64.sh"]
+  debmirror-ports:
+    image: ghcr.io/smeetsee/docker-debmirror:main
+    # build:
+    #   context: .
+    #   dockerfile: Dockerfile
+    container_name: debmirror-ports
+    volumes:
+      - ./
+      - /volume1/mirror:/opt/mirror
+    restart: no
+    entrypoint: [ "bash", "-c", "./mirrorbuild-ports.sh"]
