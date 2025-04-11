@@ -93,8 +93,8 @@ jobs:
           context: .
           platforms: ${{ matrix.platform }}
           tags: |
-            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}-action:${{ env.PLATFORM_PAIR }}
-          labels: ${{ steps.meta-action.outputs.labels }}
+            ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ env.PLATFORM_PAIR }}
+          labels: ${{ steps.meta.outputs.labels }}
           outputs: type=image,push=${{ github.event_name != 'pull_request' }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
