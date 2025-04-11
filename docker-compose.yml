@@ -2,7 +2,7 @@ version: '3.6'
 
 services:
   debmirror-amd64:
-    image: ghcr.io/smeetsee/docker-debmirror:main
+    image: ghcr.io/smeetsee/docker-debmirror:latest
     # build:
     #   context: .
     #   dockerfile: Dockerfile
@@ -13,7 +13,7 @@ services:
     restart: 'no'
     entrypoint: [ "bash", "-c", "chmod +x /opt/mirrorbuild-amd64.sh && /opt/mirrorbuild-amd64.sh"]
   debmirror-ports:
-    image: ghcr.io/smeetsee/docker-debmirror:main
+    image: ghcr.io/smeetsee/docker-debmirror:latest
     # build:
     #   context: .
     #   dockerfile: Dockerfile
